@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
 set -euo pipefail
+<<<<<<< HEAD
 
 VAULT_NAME="${VAULT_NAME:-vpn-keyvault6556}"
 WG_IF="${WG_IF:-wg0}"
 WG_ADDR="${WG_ADDR:-10.8.0.1/24}"
 WG_PORT="${WG_PORT:-51820}"
+=======
+source secret.env
+
+#example
+#VAULT_NAME={YOUR KEY VAULT NAME}
+#WG_IF={WG_IF}
+#WG_ADDR={WG_ADDRESS}
+#WG_PORT="{OPEN PORT FOR WG}"
+>>>>>>> 82b049e (final!)
 
 az login --identity --allow-no-subscriptions >/dev/null || true
 

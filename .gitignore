@@ -13,9 +13,12 @@ override.tf.json
 
 #Environment / secret
 secret.env
+secret.auto.tfvars
 *.pem
 *.key
 *.conf
+*.tfvars
+
 
 #logs/misc
 
