@@ -1,5 +1,4 @@
 
-source secret.env
 
 terraform {
   required_providers {
@@ -12,7 +11,7 @@ terraform {
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
-  subscription_id = var.subscription_id
+  subscription_id = var.sub_id
   features {
     key_vault {
       purge_soft_delete_on_destroy    = true
@@ -151,7 +150,7 @@ resource "azurerm_linux_virtual_machine" "vpn-vm" {
 
 data "azurerm_client_config" "current" {}
 resource "azurerm_key_vault" "vpn_key" {
-  name                        = var.key_vault
+  name                        = var.keyvault
   location                    = azurerm_resource_group.vpn_resource.location
   resource_group_name         = azurerm_resource_group.vpn_resource.name
   enabled_for_disk_encryption = true

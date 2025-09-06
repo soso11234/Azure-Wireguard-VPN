@@ -4,29 +4,24 @@ variable "subnet_choice" {
   default     = 1
 }
 
-variable "subscription_id"
-{
+variable "sub_id"{
   type = string
 }
 
-variable "public_key"
-{
+variable "public_key"{
   type = string
 }
 
-variable "admin_ip"
-{
+variable "admin_ip"{
   type = string
   default = "0.0.0.0/0"
 }
 
-variable "wireguard_source"
-{
+variable "wireguard_source"{
   type = string
   default = "0.0.0.0/0"
 }
 
-variable "vpn-key_vault"
-{
+variable "keyvault"{
   type = string
 }

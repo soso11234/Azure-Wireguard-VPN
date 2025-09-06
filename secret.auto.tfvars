@@ -1,0 +1,5 @@
+sub_id="9b3fb6dd-e5c2-401e-be3d-3005586c8824"
+public_key="~/.ssh/id_rsa.pub"
+admin_ip="*"
+wireguard_source="*"
+keyvault="vpn-keyvault6556"
