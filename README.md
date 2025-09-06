@@ -13,12 +13,23 @@ This project provisions a secure WireGuard VPN server on Azure, with automated k
   - `wg_bot.py` allows authorized users to request new clients via `/newclient <name>`.
   - The bot sends `.conf` files and QR codes directly in chat.
 
+## 🔑 Security Notes
+- All secrets (tokens, keys, IPs) are loaded from `secret.env` or Azure Key Vault.
+- Do **not** commit `secret.env`, `.conf`, or key files.
+- Rotate your secrets if you accidentally expose them.
+
+## ⚡ Usage
+1. **Terraform Deployment**
+   ```bash
+   terraform init
+   terraform apply -var-file=secrets.tfvars
+
 ## 📂 Project Structure
-├── main.tf # Terraform infra (Resource Group, VM, Networking, Key Vault)
-├── locals.tf # Location and local variables
-├── variable.tf # Variable definitions (sub_id, keyvault, admin_ip, etc.)
-├── outputs.tf # Useful outputs (VM IP, Key Vault name, etc.)
-├── bootstrap_wg_from_kv.sh # Server setup script (WireGuard + Key Vault integration)
-├── make_client.sh # Client provisioning script (keys, conf, QR)
-├── wg_bot.py # Telegram bot for client creation
-└── .gitignore # Ensures secret files are not pushed
+- **main.tf** – Terraform infra (Resource Group, VM, Networking, Key Vault)  
+- **locals.tf** – Location and local variables  
+- **variable.tf** – Variable definitions (sub_id, keyvault, admin_ip, etc.)  
+- **outputs.tf** – Useful outputs (VM IP, Key Vault name, etc.)  
+- **bootstrap_wg_from_kv.sh** – Server setup script (WireGuard + Key Vault integration)  
+- **make_client.sh** – Client provisioning script (keys, conf, QR)  
+- **wg_bot.py** – Telegram bot for client creation  
+- **.gitignore** – Ensures secret files are not pushed  
