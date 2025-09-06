@@ -1,0 +1,27 @@
+#Terraform local
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+#Terraform working idr
+.terraform/
+.terraform.lock.hcl
+
+#Environment / secret
+secret.env
+*.pem
+*.key
+*.conf
+
+#logs/misc
+
+*.log
+*.bak
+*.tmp
+*.zip
+*.tar
+*.tgz
