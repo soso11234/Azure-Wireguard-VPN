@@ -1,16 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
-<<<<<<< HEAD
-
-WG_IF="wg0"
-SUBNET_PREFIX="10.8.0"
-DNS_IP="1.1.1.1"
-ENDPOINT_IP="4.204.66.179"
-WG_PORT="51820"
-VAULT_NAME="vpn-keyvault6556"
-OUT_DIR="/opt/wg/out"
-LOCK="/opt/wg/make.lock"
-=======
 source secret.env
 
 #.env example
@@ -23,7 +12,6 @@ source secret.env
 #VAULT_NAME=<YOUR KEYVALUT NAME>
 #OUT_DIR=<OUT DIRECTORY address>
 #LOCK=<LOCK ADDRESS>
->>>>>>> 82b049e (final!)
 
 if [ "${EUID:-$(id -u)}" -ne 0 ]; then
   echo "RUN as root: sudo $0 <name>"
